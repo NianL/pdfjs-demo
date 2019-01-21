@@ -21,11 +21,12 @@ body {
 }
 
 .pdfViewer {
-    padding: 5px 0px 60px 0px;
+    padding: 5px 0px 56px 0px;
 }
 
 .pdfViewer-page {
     margin: 0 auto;
+    padding-bottom: 5px;
     width: 100%;
 }
 
