@@ -62,9 +62,15 @@
                     }
                     //判断索引
                     if (_this.pageHeight != 0) {
-                        var nowPage = Math.floor((document.documentElement.scrollTop + window.innerHeight) /
-                            _this.pageHeight);
-                        if (nowPage != _this.index && nowPage < _this.total) _this.index = nowPage;
+                        var scrollTop = document.documentElement.scrollTop;
+                        if (scrollTop == 0) {
+                            _this.index = 0;
+                        } else {
+                            var windowInnerHeight = window.innerHeight
+                            var nowPage = Math.floor((scrollTop + windowInnerHeight) / _this.pageHeight);
+                            if (nowPage != _this.index && nowPage < _this.total) _this.index =
+                                nowPage;
+                        }
                     }
                 });
             },
