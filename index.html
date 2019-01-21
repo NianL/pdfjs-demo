@@ -67,9 +67,11 @@
                             _this.index = 0;
                         } else {
                             var windowInnerHeight = window.innerHeight
-                            var nowPage = Math.floor((scrollTop + windowInnerHeight) / _this.pageHeight);
-                            if (nowPage != _this.index && nowPage < _this.total) _this.index =
-                                nowPage;
+                            var nowPage = Math.floor((scrollTop + windowInnerHeight - 5) / (_this.pageHeight +
+                                5));
+                            if (nowPage != _this.index && nowPage < _this.total) {
+                                _this.index = nowPage;
+                            }
                         }
                     }
                 });
